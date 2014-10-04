@@ -128,18 +128,15 @@ namespace ScrabbleFinder
             //char[] doubleSet = new char[set.Length * 2];
             //Array.Copy(set, 0, doubleSet, 0, set.Length);
             //Array.Copy(set, 0, doubleSet, set.Length, set.Length);
-            //
             for (var i = 1; i < set.Length + 1; i++)
             {
                 var next = new char[set.Length - 1];
                 RotateArrayRight(set, 1);
-                //Array.Copy(doubleSet, i - 1, next, 0, next.Length);
                 Array.Copy(set, 0, next, 0, next.Length);
                 if (next.Length > 1)
                 {
                     MakeSubsets(next, solutions, checks);
-                    //Task.Factory.StartNew(() => MakeSubsets(next)); //MakeSubsets(next); // 
-                }
+                 }
             }
             return solutions;
         }
